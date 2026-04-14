@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Resume — Joshua Wartena, Director of Digital Marketing.">
+  <title>Resume — Joshua Wartena</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .resume-wrap { max-width: 720px; margin: 0 auto; }
+
+    .resume-actions { display: flex; justify-content: flex-end; margin: 2rem 0 1.5rem; }
+    .btn-download { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; color: var(--white); background: var(--black); border: none; border-radius: var(--radius-md); padding: 10px 18px; cursor: pointer; text-decoration: none; }
+    .btn-download:hover { background: #333; }
+    .btn-download svg { width: 14px; height: 14px; }
+
+    .r-header { background: var(--black); border-radius: var(--radius-lg) var(--radius-lg) 0 0; padding: 2.5rem 2rem 2rem; }
+    .r-name { font-size: 32px; font-weight: 500; color: var(--white); letter-spacing: -0.5px; }
+    .r-title { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--white); opacity: 0.5; margin-top: 5px; }
+    .r-contact { display: flex; flex-wrap: wrap; gap: 6px 20px; margin-top: 1.25rem; font-size: 12px; color: var(--white); opacity: 0.65; }
+    .r-contact a { color: var(--white); opacity: 1; }
+    .r-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 1.25rem; }
+    .r-pill { font-size: 11px; color: var(--white); background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.28); border-radius: 99px; padding: 3px 10px; }
+
+    .r-body { display: grid; grid-template-columns: minmax(0,1fr) 210px; border: 1px solid var(--border); border-top: none; border-radius: 0 0 var(--radius-lg) var(--radius-lg); background: var(--white); }
+    @media (max-width: 580px) { .r-body { grid-template-columns: 1fr; } }
+
+    .r-main { padding: 2rem; border-right: 1px solid var(--border); }
+    .r-sidebar { padding: 2rem 1.5rem; background: var(--surface); border-radius: 0 0 var(--radius-lg) 0; }
+
+    .r-section { margin-bottom: 2rem; }
+    .r-section:last-child { margin-bottom: 0; }
+    .r-section-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); font-weight: 500; margin-bottom: 1rem; }
+    .r-accent { width: 28px; height: 3px; background: var(--black); border-radius: 2px; margin-bottom: 1rem; }
+
+    .r-timeline { padding-left: 20px; position: relative; }
+    .r-timeline::before { content: ''; position: absolute; left: 3px; top: 6px; bottom: 6px; width: 1px; background: var(--border); }
+
+    .r-job { position: relative; margin-bottom: 1.75rem; }
+    .r-job:last-child { margin-bottom: 0; }
+    .r-job-dot { position: absolute; left: -20px; top: 5px; width: 7px; height: 7px; border-radius: 50%; background: var(--black); }
+    .r-job-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 2px; }
+    .r-job-title { font-size: 14px; font-weight: 500; color: var(--text); }
+    .r-job-date { font-size: 11px; color: var(--muted); white-space: nowrap; padding-top: 2px; }
+    .r-job-company { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+    .r-job-desc { font-size: 12.5px; color: var(--subtle); line-height: 1.65; }
+    .r-wins { display: flex; flex-direction: column; gap: 5px; margin-top: 10px; }
+    .r-win { font-size: 12px; color: var(--subtle); display: flex; align-items: baseline; gap: 8px; }
+    .r-win-num { font-size: 13px; font-weight: 500; color: var(--text); white-space: nowrap; }
+
+    .r-divider { border: none; border-top: 1px solid var(--border); margin: 1.75rem 0; }
+
+    .r-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .r-stat { background: var(--surface); border-radius: var(--radius-md); padding: 10px 12px; }
+    .r-stat-num { font-size: 20px; font-weight: 500; color: var(--text); }
+    .r-stat-label { font-size: 11px; color: var(--muted); margin-top: 3px; }
+
+    .r-sb-section { margin-bottom: 1.75rem; }
+    .r-sb-section:last-child { margin-bottom: 0; }
+    .r-edu-name { font-size: 13px; font-weight: 500; color: var(--text); }
+    .r-edu-sub { font-size: 12px; color: var(--muted); margin-top: 2px; line-height: 1.6; }
+
+    .r-cert-list { display: flex; flex-direction: column; gap: 5px; }
+    .r-cert { font-size: 12px; color: var(--subtle); padding-left: 12px; position: relative; }
+    .r-cert::before { content: ''; position: absolute; left: 0; top: 6px; width: 4px; height: 4px; border-radius: 50%; background: var(--muted); }
+
+    .r-skill-group { margin-bottom: 1rem; }
+    .r-skill-group:last-child { margin-bottom: 0; }
+    .r-skill-group-label { font-size: 11px; color: var(--muted); margin-bottom: 5px; }
+    .r-skill-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+    .r-skill-tag { font-size: 11px; color: var(--subtle); background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 3px 8px; }
+
+    /* Extracurriculars */
+    .ec-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; margin-top: 0.5rem; }
+    @media (max-width: 500px) { .ec-grid { grid-template-columns: 1fr; } }
+    .ec-card { background: var(--surface); border-radius: var(--radius-md); padding: 14px 16px; }
+    .ec-title { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 2px; }
+    .ec-org { font-size: 11px; color: var(--muted); margin-bottom: 7px; }
+    .ec-desc { font-size: 12px; color: var(--subtle); line-height: 1.6; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-name">Joshua Wartena</a>
+    <div class="nav-links">
+      <a href="index.html">Work</a>
+      <a href="about.html">About</a>
+      <a href="resume.html" class="active">Resume</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <div class="page">
+    <div class="resume-wrap">
+
+      <div class="resume-actions">
+        <a href="img/Resume — Joshua Wartena.pdf" download class="btn-download">
+          <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 1v8M4 6l3 3 3-3" stroke="white" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M2 11h10" stroke="white" stroke-width="1.3" stroke-linecap="round"/>
+          </svg>
+          Download PDF
+        </a>
+      </div>
+
+      <div class="r-header">
+        <div class="r-name">Joshua Wartena</div>
+        <div class="r-title">Director of Digital Marketing</div>
+        <div class="r-contact">
+          <span>Joshua.wartena@gmail.com</span>
+          <span>(801) 837-2714</span>
+          <a href="https://www.linkedin.com/in/josh-wartena-140027227" target="_blank">linkedin.com/in/josh-wartena</a>
+          <span>Utah · Open to remote</span>
+        </div>
+        <div class="r-pills">
+          <span class="r-pill">Team leadership</span>
+          <span class="r-pill">Franchise marketing</span>
+          <span class="r-pill">Paid search</span>
+          <span class="r-pill">SEO strategy</span>
+          <span class="r-pill">Brand management</span>
+          <span class="r-pill">Revenue analysis</span>
+          <span class="r-pill">HTML &amp; CSS</span>
+          <span class="r-pill">Public speaking</span>
+          <span class="r-pill">Fluent Spanish</span>
+        </div>
+      </div>
+
+      <div class="r-body">
+        <div class="r-main">
+
+          <div class="r-section">
+            <div class="r-section-label">Experience</div>
+            <div class="r-accent"></div>
+            <div class="r-timeline">
+
+              <div class="r-job">
+                <div class="r-job-dot"></div>
+                <div class="r-job-header">
+                  <div class="r-job-title">Director of Digital Marketing</div>
+                  <div class="r-job-date">Oct 2021 – Present</div>
+                </div>
+                <div class="r-job-company">BELFOR Franchise Group</div>
+                <div class="r-job-desc">Built a full-service internal digital agency from scratch — growing the team to 10 specialists and expanding scope to cover onboarding, paid search, SEO, social, and website support for 500+ franchise partners across international brands. Delivered training programs, national convention presentations, and year-over-year revenue growth.</div>
+                <div class="r-wins">
+                  <div class="r-win"><span class="r-win-num">500+</span> franchise clients supported</div>
+                  <div class="r-win"><span class="r-win-num">10</span> person team hired &amp; led</div>
+                </div>
+              </div>
+
+              <div class="r-job">
+                <div class="r-job-dot"></div>
+                <div class="r-job-header">
+                  <div class="r-job-title">Social Media Manager</div>
+                  <div class="r-job-date">Jul 2020 – Jul 2021</div>
+                </div>
+                <div class="r-job-company">Kneaders Bakery and Cafe</div>
+                <div class="r-job-desc">Owned brand voice and content strategy across all channels. Managed paid campaigns across Google and Facebook supporting a five-state footprint. Led content team scheduling, email campaigns, and full-funnel paid/organic strategy.</div>
+                <div class="r-wins">
+                  <div class="r-win"><span class="r-win-num">$240K+</span> annual ad budget managed</div>
+                </div>
+              </div>
+
+              <div class="r-job">
+                <div class="r-job-dot"></div>
+                <div class="r-job-header">
+                  <div class="r-job-title">Digital Marketing Manager</div>
+                  <div class="r-job-date">Jan 2016 – Jun 2020</div>
+                </div>
+                <div class="r-job-company">Sundance Mountain Resort</div>
+                <div class="r-job-desc">Grew digital from newsletters and basic edits into a full department covering ad campaigns, social, email, photography, and website development. Delivered highest lodging and event revenue in property history.</div>
+                <div class="r-wins">
+                  <div class="r-win"><span class="r-win-num">$500K+</span> annual ad spend, 5% YoY cost reduction</div>
+                  <div class="r-win"><span class="r-win-num">160%</span> email list growth (50K → 130K)</div>
+                  <div class="r-win"><span class="r-win-num">#1</span> Condé Nast Ski Resort in North America</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="r-divider"></div>
+
+          <div class="r-section">
+            <div class="r-section-label">Impact at a glance</div>
+            <div class="r-stats">
+              <div class="r-stat"><div class="r-stat-num">500+</div><div class="r-stat-label">Franchise clients managed</div></div>
+              <div class="r-stat"><div class="r-stat-num">10</div><div class="r-stat-label">Person team built &amp; led</div></div>
+              <div class="r-stat"><div class="r-stat-num">$500K+</div><div class="r-stat-label">Annual ad spend directed</div></div>
+              <div class="r-stat"><div class="r-stat-num">160%</div><div class="r-stat-label">Email list growth</div></div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="r-sidebar">
+
+          <div class="r-sb-section">
+            <div class="r-section-label">Education</div>
+            <div class="r-edu-name">BA Journalism</div>
+            <div class="r-edu-sub">Minor in Spanish<br>Utah Valley University<br>Honors · 3.7 GPA</div>
+          </div>
+
+          <div class="r-sb-section">
+            <div class="r-section-label">Certifications</div>
+            <div class="r-cert-list">
+              <div class="r-cert">Google Ads Certified</div>
+              <div class="r-cert">Google Analytics Certified</div>
+              <div class="r-cert">DJI Licensed Drone Pilot</div>
+            </div>
+          </div>
+
+          <div class="r-sb-section">
+            <div class="r-section-label">Platforms</div>
+            <div class="r-skill-group">
+              <div class="r-skill-group-label">CMS &amp; web</div>
+              <div class="r-skill-tags">
+                <span class="r-skill-tag">Wordpress</span>
+                <span class="r-skill-tag">Umbraco</span>
+                <span class="r-skill-tag">Shopify</span>
+                <span class="r-skill-tag">Squarespace</span>
+              </div>
+            </div>
+            <div class="r-skill-group">
+              <div class="r-skill-group-label">Ads &amp; analytics</div>
+              <div class="r-skill-tags">
+                <span class="r-skill-tag">Google Ads</span>
+                <span class="r-skill-tag">Meta Ads</span>
+                <span class="r-skill-tag">GA4</span>
+                <span class="r-skill-tag">RavenTools</span>
+              </div>
+            </div>
+            <div class="r-skill-group">
+              <div class="r-skill-group-label">Operations</div>
+              <div class="r-skill-tags">
+                <span class="r-skill-tag">GHL</span>
+                <span class="r-skill-tag">CallRail</span>
+                <span class="r-skill-tag">Jobber</span>
+                <span class="r-skill-tag">Navis</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Extracurriculars — below the main resume card -->
+      <div class="section">
+        <div class="r-section-label">Beyond the desk</div>
+        <div class="r-accent"></div>
+        <div class="ec-grid">
+
+          <div class="ec-card">
+            <div class="ec-title">Opinions Editor &amp; Copy Editor</div>
+            <div class="ec-org">UVU Review Newspaper</div>
+            <div class="ec-desc">Edited and shaped opinion content for the university paper, developing a strong editorial voice and sharp copy-editing instincts that still inform how I approach all written marketing work.</div>
+          </div>
+
+          <div class="ec-card">
+            <div class="ec-title">Journalism Intern</div>
+            <div class="ec-org">Scott Carrier, NPR Correspondent</div>
+            <div class="ec-desc">Assisted with curriculum, lectures, and assignments under an NPR correspondent — an early crash course in storytelling, precision, and finding the angle that actually matters.</div>
+          </div>
+
+          <div class="ec-card">
+            <div class="ec-title">Founder, Interfaith Dialogue Committee</div>
+            <div class="ec-org">Orem Institute</div>
+            <div class="ec-desc">Started and led a student-run dialogue program connecting religious leaders and students across Utah, Oregon, and California. Built the kind of communication skills that come from navigating genuinely different perspectives.</div>
+          </div>
+
+          <div class="ec-card">
+            <div class="ec-title">ESL Tutor</div>
+            <div class="ec-org">UVU Language Department</div>
+            <div class="ec-desc">Tutored non-native English speakers through the university's language program. Paired with two years living and working in Argentina, this experience shapes how I think about communication across audiences.</div>
+          </div>
+
+          <div class="ec-card">
+            <div class="ec-title">Performer &amp; Volunteer</div>
+            <div class="ec-org">Timpanogos Storytelling Festival · 15 years</div>
+            <div class="ec-desc">A decade and a half of involvement with one of Utah's most beloved community events — performing, volunteering, and staying deeply connected to the craft of telling a story that lands.</div>
+          </div>
+
+          <div class="ec-card">
+            <div class="ec-title">Volunteer Service</div>
+            <div class="ec-org">Argentina · 2 years</div>
+            <div class="ec-desc">Two years of full-time volunteer service in Argentina, where I became fluent in Spanish and learned what it means to show up consistently for people who have no reason to trust you yet.</div>
+          </div>
+
+        </div>
+      </div>
+
+      <footer>
+        <span class="footer-name">Joshua Wartena</span>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/josh-wartena-140027227" target="_blank">LinkedIn</a>
+          <a href="mailto:Joshua.wartena@gmail.com">Email</a>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+</body>
+</html>

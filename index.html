@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Joshua Wartena — Director of Digital Marketing. Building digital marketing operations from the ground up.">
+  <title>Joshua Wartena — Digital Marketing</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Brand-colored folder overrides */
+    .folder-tab.belfor   { background: #f5c6c6; border-color: #cf2e2e; }
+    .folder-tab.sundance { background: #c2d8db; border-color: #042d34; }
+    .folder-tab.kneaders { background: #e8d0c0; border-color: #86441b; }
+
+    .folder-body.belfor   { border-color: #cf2e2e; }
+    .folder-body.sundance { border-color: #042d34; }
+    .folder-body.kneaders { border-color: #86441b; }
+
+    .folder-header.belfor   { background: #fdf0f0; border-bottom-color: #cf2e2e; }
+    .folder-header.sundance { background: #eaf3f4; border-bottom-color: #042d34; }
+    .folder-header.kneaders { background: #f7ede4; border-bottom-color: #86441b; }
+
+    .folder-icon.belfor   { background: #f5c6c6; }
+    .folder-icon.sundance { background: #c2d8db; }
+    .folder-icon.kneaders { background: #e8d0c0; }
+
+    .folder-badge.belfor   { background: #f5c6c6; color: #7a1a1a; }
+    .folder-badge.sundance { background: #c2d8db; color: #042d34; }
+    .folder-badge.kneaders { background: #e8d0c0; color: #5a2a0a; }
+
+    /* Fixed height so all three cards match the tallest */
+    .folder-body { min-height: 300px; display: flex; flex-direction: column; }
+    .folder-meta { flex: 1; }
+    .folder-footer { min-height: 100px; height: 100px; align-items: flex-start; align-content: flex-start; overflow: hidden; }
+
+    /* Hero with headshot */
+    .hero-layout { display: flex; align-items: stretch; gap: 2rem; }
+    .hero-content { flex: 1; min-width: 0; }
+    .hero-headshot { width: 200px; flex-shrink: 0; border-radius: 0 0 var(--radius-lg) 0; overflow: hidden; margin: -3.5rem -2rem -3rem 0; }
+    .hero-headshot img { width: 100%; height: 100%; object-fit: cover; object-position: 65% top; display: block; }
+    @media (max-width: 640px) {
+      .hero-layout { flex-direction: column; }
+      .hero-headshot { width: calc(100% + 3rem); height: 240px; border-radius: 0 0 var(--radius-lg) var(--radius-lg); margin: 1.5rem -1.5rem -3rem; }
+    }
+
+    /* Roots section */
+    .roots-grid { display: grid; grid-template-columns: minmax(0,1fr) 340px; gap: 2rem; align-items: center; }
+    @media (max-width: 640px) { .roots-grid { grid-template-columns: 1fr; } }
+    .roots-photo { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: var(--radius-lg); border: 1px solid var(--border); display: block; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-name">Joshua Wartena</a>
+    <div class="nav-links">
+      <a href="index.html" class="active">Work</a>
+      <a href="about.html">About</a>
+      <a href="resume.html">Resume</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <div class="page">
+
+    <div class="hero">
+      <div class="hero-layout">
+        <div class="hero-content">
+          <div class="hero-name">Director of<br>Digital Marketing</div>
+          <div class="hero-name-rule"></div>
+          <div class="hero-sub">Utah · Open to remote</div>
+          <div class="hero-bio">I build digital marketing operations from the ground up - turning basic web presences into full-scale, revenue-driving programs. For 10+ years I've specialized in franchise and multi-location marketing, leading teams that balance consistent brand identity with the unique story of every location they serve.</div>
+          <div class="hero-pills">
+            <span class="hero-pill">Team leadership</span>
+            <span class="hero-pill">Franchise marketing</span>
+            <span class="hero-pill">SEO strategy</span>
+            <span class="hero-pill">Paid search</span>
+            <span class="hero-pill">Brand management</span>
+            <span class="hero-pill">Revenue analysis</span>
+            <span class="hero-pill">HTML &amp; CSS</span>
+            <span class="hero-pill">Fluent Spanish</span>
+          </div>
+          <div class="hero-cta">
+            <a href="resume.html" class="btn-primary">View resume</a>
+            <a href="contact.html" class="btn-ghost">Get in touch</a>
+          </div>
+        </div>
+        <div class="hero-headshot">
+          <img src="img/headshot.jpg" alt="Joshua Wartena">
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Selected work</div>
+      <div class="accent-bar"></div>
+
+      <div class="folder-grid">
+
+        <a href="work/belfor.html" class="folder-card">
+          <div class="folder-tab belfor"></div>
+          <div class="folder-body belfor">
+            <div class="folder-header belfor">
+              <div class="folder-icon belfor">
+                <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="1" y="4" width="12" height="9" rx="1.5" stroke="#7a1a1a" stroke-width="1.2"/>
+                  <path d="M1 6.5h12" stroke="#7a1a1a" stroke-width="1.2"/>
+                  <rect x="4" y="1.5" width="6" height="3" rx="1" stroke="#7a1a1a" stroke-width="1.2"/>
+                </svg>
+              </div>
+              <span class="folder-badge belfor">Current Role</span>
+            </div>
+            <div class="folder-meta">
+              <div class="folder-title">BELFOR Franchise Group · 2021–Present</div>
+              <div class="folder-company">Internal Agency Direction</div>
+              <div class="folder-rows">
+                <div class="folder-row"><span class="folder-row-label">Team size</span><span class="folder-row-val">10 specialists</span></div>
+                <div class="folder-row"><span class="folder-row-label">Clients</span><span class="folder-row-val">500+ franchises</span></div>
+                <div class="folder-row"><span class="folder-row-label">Scope</span><span class="folder-row-val">Full agency</span></div>
+              </div>
+            </div>
+            <div class="folder-footer">
+              <span class="ftag">SEO</span>
+              <span class="ftag">Paid Search</span>
+              <span class="ftag">Onboarding</span>
+              <span class="ftag">Organic Strategy</span>
+              <span class="ftag">Franchise Training</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="work/sundance.html" class="folder-card">
+          <div class="folder-tab sundance"></div>
+          <div class="folder-body sundance">
+            <div class="folder-header sundance">
+              <div class="folder-icon sundance">
+                <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7 1.5L8.5 5h3.5l-2.8 2 1 3.5L7 9l-3.2 1.5 1-3.5L2 5h3.5L7 1.5z" stroke="#042d34" stroke-width="1.2" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <span class="folder-badge sundance">Brand Storytelling</span>
+            </div>
+            <div class="folder-meta">
+              <div class="folder-title">Sundance Mountain Resort · 2016–2020</div>
+              <div class="folder-company">Resort Digital Growth</div>
+              <div class="folder-rows">
+                <div class="folder-row"><span class="folder-row-label">Ad spend</span><span class="folder-row-val">$500K+ / yr</span></div>
+                <div class="folder-row"><span class="folder-row-label">Review growth</span><span class="folder-row-val">5 → 4,000+</span></div>
+                <div class="folder-row"><span class="folder-row-label">Recognition</span><span class="folder-row-val">Condé Nast #1</span></div>
+              </div>
+            </div>
+            <div class="folder-footer">
+              <span class="ftag">Google Ads</span>
+              <span class="ftag">Email Marketing</span>
+              <span class="ftag">Web Development</span>
+              <span class="ftag">Data Analysis</span>
+              <span class="ftag">Photography</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="work/kneaders.html" class="folder-card">
+          <div class="folder-tab kneaders"></div>
+          <div class="folder-body kneaders">
+            <div class="folder-header kneaders">
+              <div class="folder-icon kneaders">
+                <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="7" cy="5" r="2.5" stroke="#5a2a0a" stroke-width="1.2"/>
+                  <path d="M2 12c0-2.76 2.24-5 5-5s5 2.24 5 5" stroke="#5a2a0a" stroke-width="1.2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <span class="folder-badge kneaders">Brand Voice</span>
+            </div>
+            <div class="folder-meta">
+              <div class="folder-title">Kneaders Bakery · 2020–2021</div>
+              <div class="folder-company">Brand &amp; Social Strategy</div>
+              <div class="folder-rows">
+                <div class="folder-row"><span class="folder-row-label">Ad budget</span><span class="folder-row-val">$240K+ / yr</span></div>
+                <div class="folder-row"><span class="folder-row-label">Markets</span><span class="folder-row-val">5 states</span></div>
+                <div class="folder-row"><span class="folder-row-label">Channels</span><span class="folder-row-val">4 platforms</span></div>
+              </div>
+            </div>
+            <div class="folder-footer">
+              <span class="ftag">Social Media</span>
+              <span class="ftag">Content Planning</span>
+              <span class="ftag">CRM Management</span>
+              <span class="ftag">Email Marketing</span>
+              <span class="ftag">Photography</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section-label">Impact at a glance</div>
+    <div class="accent-bar"></div>
+    <div class="stats-row">
+      <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Franchise clients managed</div></div>
+      <div class="stat"><div class="stat-num">10</div><div class="stat-label">Person team built &amp; led</div></div>
+      <div class="stat"><div class="stat-num">$500K+</div><div class="stat-label">Annual ad spend directed</div></div>
+      <div class="stat"><div class="stat-num">160%</div><div class="stat-label">Email list growth</div></div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section-label">Where I come from</div>
+    <div class="accent-bar"></div>
+    <div class="roots-grid">
+      <div class="about-card">
+        <div class="about-card-label">Small business roots</div>
+        <div class="about-card-text">
+          I grew up in a household of 6 boys. Business wasn't abstract — it was the reason things worked out or didn't. My dad is a self-employed general contractor, and I worked with him since I was tall enough to push a broom. We solved problems understanding that every decision had a real cost to the client, and that perspective has never left me. Digital marketing does not need to be a mystery. There are real-world impacts to what you can do as an owner, and I'm here to help you understand so you can take control of what's at stake.
+        </div>
+      </div>
+      <img src="img/couple.jpg" alt="Joshua and his wife" class="roots-photo">
+    </div>
+
+    <footer>
+      <span class="footer-name">Joshua Wartena</span>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/josh-wartena-140027227" target="_blank">LinkedIn</a>
+        <a href="mailto:Joshua.wartena@gmail.com">Email</a>
+        <a href="img/joshua_wartena_resume.pdf" target="_blank">Resume</a>
+      </div>
+    </footer>
+
+  </div>
+
+</body>
+</html>
